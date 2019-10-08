@@ -36,7 +36,7 @@ var test = document.getElementById('box');
 var num;
 console.log('null和undefined，', num);
 // void: 方法没有返回值：
-function run() { console.log('111111'); }
+function run() { console.log('void声明，多用于没有返回值的方法'); }
 run();
 function run2() { return 6666; }
 console.log(run2());

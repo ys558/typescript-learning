@@ -35,7 +35,7 @@ let num: number | null | undefined;
 console.log('null和undefined，', num);
 
 // void: 方法没有返回值：
-function run():void { console.log('111111')}
+function run():void { console.log('void声明，多用于没有返回值的方法')}
 run();
 
 function run2(): number { return 6666  }

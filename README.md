@@ -1,9 +1,9 @@
 ### 安装ts：
 `npm install -g typescript`
+### 初始化：
+`tsc --init`
 ### 编译ts：
 `tsc helloworld.ts`
-### 格式化：
-`tsc --init`
 > 这里会在项目文件夹中生成：tsconfig.json文件，可在里面修改ts编译后的ts文件生成路径
 
 ### VS code 里的设置：
