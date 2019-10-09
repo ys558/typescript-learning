@@ -81,3 +81,54 @@ console.log(P1.run());
 var B = new A3('哈哈', 2344, 'hehe')
 console.log(B.run());
 
+// 4. 静态方法及静态属性：static
+// // es5定义静态方法：
+// function XX() {
+//     // 这个是类里的实例方法：
+//     this.run = function() {}
+// }
+// // es5的定义静态方法：
+// XX.run=function(){}
+// // es5的定义静态属性：
+// XX.name= "dd";
+
+class X {
+    public name: string;
+    static hehe: string="静态属性";
+    constructor(name:string) { this.name = name }
+    run():void {console.log(`${this.name}在运动`)}
+    work():void {console.log(`${this.name}在工作`)}
+    static print() {
+        // 静态方法是独立的，只能调用静态属性static，不能调用正常属性：
+        console.log('X的静态方法', `直接调用hehe的${X.hehe}`);
+    }
+}
+var x1=new X('llllllllllll');
+console.log(x1.work());
+// 静态方法可以直接调用：
+X.print();
+console.log(X.hehe);
+
+
+// 5. 抽象方法 abstract
+// 抽象类不能直接实例化，他是提供给其他子类继承的基类
+abstract class Animal {
+    public name: string;
+    constructor(name:string) {
+        this.name = name;
+    }
+    // 5.1 抽象类里必须有抽象方法：否则报错：
+    abstract eat():any;
+}
+class Dog extends Animal {
+    constructor(name:string){
+        super(name)
+    }
+
+    // 5.2 继承了抽象类的子类里必须有父类的抽象方法，否则报错：
+    eat() {
+        return console.log('子类的抽象方法:',`${this.name}吃东西`);
+    }
+}
+var d= new Dog('小黑');
+d.eat();
