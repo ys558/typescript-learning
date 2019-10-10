@@ -8,9 +8,8 @@ function getDatas(value) {
     return value;
 }
 getDatas(123);
-// 错误写法：
-// getDatas<number>('字符串')
 // 2. 泛型类:解决类的类型校验
+// 2.1 普通类：
 // class MyClass {
 //     public list: number []=[];
 //     add(num: number) {
@@ -51,7 +50,7 @@ var MinClass = /** @class */ (function () {
     };
     return MinClass;
 }());
-// 1.1 规定类传入number和string
+// 2.1 规定类传入number和string:
 var m1 = new MinClass();
 m1.add(6);
 m1.add(5);
@@ -62,3 +61,11 @@ m2.add('哈哈');
 m2.add('呵呵');
 m2.add('吼吼');
 console.log(m2.minus());
+var getData = function (value) {
+    return value;
+};
+getData('张三');
+function getData2(value) {
+    return value;
+}
+var myGetDaata = getData;

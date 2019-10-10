@@ -8,10 +8,9 @@ function getDatas <T> (value:T): T {
 }
 
 getDatas<number>(123);
-// 错误写法：
-// getDatas<number>('字符串')
 
 // 2. 泛型类:解决类的类型校验
+// 2.1 普通类：
 // class MyClass {
 //     public list: number []=[];
 //     add(num: number) {
@@ -50,7 +49,7 @@ class MinClass <T> {
         return minNum
     }
 }
-// 1.1 规定类传入number和string
+// 2.1 规定类传入number和string:
 var m1 = new MinClass<number>();
 m1.add(6);
 m1.add(5);
@@ -62,3 +61,31 @@ m2.add('哈哈');
 m2.add('呵呵');
 m2.add('吼吼');
 console.log(m2.minus());
+
+// 3. 泛型接口
+// 3.1 普通函数类型接口：
+// interface ConfigFn {
+//     (value1:string, value2:string):string;
+// }
+// var setData:ConfigFn = function(value1:string, value2:string):string {
+//     return value1+value2
+// }
+
+// 3.2 泛型接口：
+// 3.2.1 定义方法1：
+interface ConfigFn {
+    <T>(value:T):T;
+}
+var getData:ConfigFn = function<T>(value:T):T{
+    return value;
+}
+getData<string>('张三');
+
+// 3.2.1 方法2：
+interface ConfigFn2 <T> {
+    (value:T):T;
+}
+function getData2 <T>(value:T):T{
+    return value;
+}
+var myGetDaata: ConfigFn2 <string> = getData;
