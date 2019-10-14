@@ -27,6 +27,11 @@ enum flag2 { blue, red, black }
 const f2: flag2= flag2.black;
 console.log("枚举：",f2); //2
 
+// 一个变量可以定义多种类型：
+let some : number | string;
+some = 123
+console.log(`一个变量的多种类型：${some}, 为${typeof(some)}类型，`);
+
 // 任意类型：any,相当于没有指定类型：用于获取dom节点
 const test: any = document.getElementById('box')
 

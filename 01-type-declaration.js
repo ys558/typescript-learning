@@ -30,6 +30,10 @@ var flag2;
 })(flag2 || (flag2 = {}));
 var f2 = flag2.black;
 console.log("枚举：", f2); //2
+// 一个变量可以定义多种类型：
+var some;
+some = 123;
+console.log("\u4E00\u4E2A\u53D8\u91CF\u7684\u591A\u79CD\u7C7B\u578B\uFF1A" + some + ", \u4E3A" + typeof (some) + "\u7C7B\u578B\uFF0C");
 // 任意类型：any,相当于没有指定类型：用于获取dom节点
 var test = document.getElementById('box');
 // null和undefined，一个元素可以不定义或不传：
