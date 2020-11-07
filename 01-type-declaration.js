@@ -1,4 +1,3 @@
-"use strict";
 var st = '111111';
 var num1 = 222;
 console.log('声明字符串：', st);
